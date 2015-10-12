@@ -1,16 +1,22 @@
+# ENV aliases
 alias src="source ~/.bash_profile"
-alias push='git push origin HEAD:refs/for/develop'
-alias dockerNginx="docker run -p 80:80 -d nginx"
 
+# DOCKER aliases
+alias dms="docker-machine start default"
+alias dockerNginx="docker run -p 80:80 -d nginx"
 alias devbox_create="docker run --name devbox -p 80:80 -d -v ${PWD}:/src devbox"
 alias devbox_go="docker exec -i -t devbox /usr/bin/zsh"
 
+# GIT aliases
+alias ad="git add -A"
+alias cm="git commit -m ${1}"
+alias push='git push origin HEAD:refs/for/develop'
 alias st="git status"
 alias bd="git diff --name-status ${1}"
 alias df="git diff ${1}"
-alias lg="git log --oneline --decorate"
+alias lg="git log --oneline --decorate ${1}"
 
-echo "SOME EXTRA GIT COMMAND TO TRY: st, bd, df, lg"
+echo "SOME EXTRA GIT COMMAND TO TRY: ad, cm, st, bd, df, lg"
 
 export PATH=$PATH:~/Desktop/Code/idea-cli/
 
