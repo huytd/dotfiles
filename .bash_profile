@@ -15,6 +15,7 @@ alias st="git status"
 alias bd="git diff --name-status ${1}"
 alias df="git diff ${1}"
 alias lg="git log --oneline --decorate ${1}"
+alias psh="git push"
 
 echo "SOME EXTRA GIT COMMAND TO TRY: ad, cm, st, bd, df, lg"
 
