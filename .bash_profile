@@ -1,5 +1,6 @@
 # ENV aliases
 alias src="source ~/.bash_profile"
+alias dic="~/dict.py ${1}"
 
 # DOCKER aliases
 alias dms="docker-machine start default"
