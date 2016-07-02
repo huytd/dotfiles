@@ -1,3 +1,3 @@
 sudo cp ~/.bash_profile .
-sudo cp ~/.vimrc .
-sudo cp ~/.bashrc .
+sudo cp -rf ~/.config/nvim .
+sudo cp -rf ~/.tmux.conf .
