@@ -1,0 +1,12 @@
+This repo contains all my dotfiles on my local machines.
+
+After clone this, don't forget to run:
+
+```
+git submodule update --recursive
+```
+
+My toolkit:
+
+- Neovim
+- Tmux

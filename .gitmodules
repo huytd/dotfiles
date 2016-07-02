@@ -1,0 +1,24 @@
+[submodule ".config/nvim/bundle/ctrlp.vim"]
+	path = .config/nvim/bundle/ctrlp.vim
+	url = http://github.com/ctrlpvim/ctrlp.vim
+[submodule ".config/nvim/bundle/deoplete.nvim"]
+	path = .config/nvim/bundle/deoplete.nvim
+	url = http://github.com/Shougo/deoplete.nvim
+[submodule ".config/nvim/bundle/vim-airline-themes"]
+	path = .config/nvim/bundle/vim-airline-themes
+	url = http://github.com/vim-airline/vim-airline-themes
+[submodule ".config/nvim/bundle/vim-go"]
+	path = .config/nvim/bundle/vim-go
+	url = http://github.com/fatih/vim-go
+[submodule ".config/nvim/bundle/deoplete-go"]
+	path = .config/nvim/bundle/deoplete-go
+	url = http://github.com/zchee/deoplete-go
+[submodule ".config/nvim/bundle/vim-airline"]
+	path = .config/nvim/bundle/vim-airline
+	url = http://github.com/vim-airline/vim-airline
+[submodule ".config/nvim/bundle/vim-gitgutter"]
+	path = .config/nvim/bundle/vim-gitgutter
+	url = http://github.com/airblade/vim-gitgutter
+[submodule ".config/nvim/bundle/vim-markdown-composer"]
+	path = .config/nvim/bundle/vim-markdown-composer
+	url = http://github.com/euclio/vim-markdown-composer
