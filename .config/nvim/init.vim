@@ -1,27 +1,19 @@
 execute pathogen#infect()
 
+call plug#begin()
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
 let g:deoplete#enable_at_startup=1
 
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+nnoremap <ESC><ESC> :nohlsearch<CR>
 
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
 let g:is_posix = 1
-nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
 
 set nojoinspaces
 set nowrap
@@ -32,11 +24,32 @@ set ttimeout
 set ttimeoutlen=10
 set termguicolors
 
+let g:terminal_color_0  = '#2e3436'
+let g:terminal_color_1  = '#bf616a'
+let g:terminal_color_2  = '#a3be8c'
+let g:terminal_color_3  = '#ebcb8b'
+let g:terminal_color_4  = '#8fa1b3'
+let g:terminal_color_5  = '#b48ead'
+let g:terminal_color_6  = '#96b5b4'
+let g:terminal_color_7  = '#dfe1e8'
+let g:terminal_color_8  = '#555753'
+let g:terminal_color_9  = '#bf616a'
+let g:terminal_color_10 = '#a3be8c'
+let g:terminal_color_11 = '#ebcb8b'
+let g:terminal_color_12 = '#8fa1b3'
+let g:terminal_color_13 = '#b48ead'
+let g:terminal_color_14 = '#96b5b4'
+let g:terminal_color_15 = '#eeeeec'
+
 colorscheme base16-ocean 
 
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
 	syntax on
 endif
+
+autocmd VimEnter * command! -bang -nargs=* Ag
+    \ call fzf#vim#ag(<q-args>, {'down': '40%', 'options': '--color'})
+nnoremap \ :Ag<SPACE>
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -54,16 +67,22 @@ set shiftround
 set expandtab
 
 let mapleader=" "
-nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader>p :Files<CR>
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>r :GoRun<CR>
-nnoremap <Leader>t :GoTest<CR>
+nnoremap <Leader>t :TestNearest<CR>
+nnoremap <Leader>T :TestSuite<CR>
 nnoremap <Leader>l :vsplit<CR>
 nnoremap <Leader>k :split<CR>
 nnoremap <Leader>wh :wincmd h<CR>
 nnoremap <Leader>wl :wincmd l<CR>
 nnoremap <Leader>wk :wincmd k<CR>
 nnoremap <Leader>wj :wincmd j<CR>
+nnoremap <Leader>e :QuickRunExecute<CR>
+
+let g:airline#extensions#whitespace#enabled = 0
+
+set relativenumber
+set clipboard=unnamed
 
 let g:go_dispatch_enabled = 1
 let g:go_fmt_command = "goimports"
