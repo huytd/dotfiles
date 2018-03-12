@@ -40,3 +40,17 @@ set -g pane-active-border-fg colour7
 set -g pane-border-fg colour8
 
 set-option -g default-command "reattach-to-user-namespace -l zsh"
+
+# Setup 'v' to begin selection as in Vim
+bind-key -Tcopy-mode-vi 'v' send -X begin-selection
+bind-key -Tcopy-mode-vi 'y' send -X copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Update default binding of `Enter` to also use copy-pipe
+unbind -Tcopy-mode-vi Enter
+bind-key -Tcopy-mode-vi Enter send -X copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Bind ']' to use pbpaste
+bind ] run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
+
+set -g escape-time 0
+
