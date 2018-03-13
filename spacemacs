@@ -326,6 +326,9 @@ you should place your code here."
   ;; Use jk as an escape key
   (setq-default evil-escape-key-sequence "jk")
 
+  ;; :q should kill the current buffer rather than quitting emacs entirely
+  (evil-ex-define-cmd "q" 'kill-this-buffer)
+
   ;; Some orgmode statuses list
   (setq org-todo-keywords
         '((sequence "TODO" "WIP" "DONE"))) 
