@@ -468,7 +468,7 @@ you should place your code here."
  '(hl-line ((t (:background "#222222"))))
  '(js2-external-variable ((t (:foreground "MediumPurple1"))))
  '(js2-function-param ((t (:foreground "thistle1"))))
- '(linum ((t (:background "#1c1c1c" :foreground "#444444"))))
+ '(linum ((t (:background "#1c1c1c" :foreground "#282828"))))
  '(mode-line-buffer-id ((t (:foreground "MediumPurple3" :weight bold))))
  '(mode-line-buffer-id-inactive ((t (:foreground "MediumPurple4"))))
  '(powerline-active2 ((t (:inherit mode-line :background "#262626" :foreground "#ffffff"))))
