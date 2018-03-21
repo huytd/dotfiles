@@ -1,0 +1,13 @@
+term xterm-256color
+
+escape "^uu"
+bind s
+bind ^S
+bind x
+bind ^X
+
+vbell off
+
+hardstatus off
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
