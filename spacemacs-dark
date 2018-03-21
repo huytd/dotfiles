@@ -323,6 +323,23 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (require 'tramp)
+
+  ;; Elscreen
+  (elscreen-start)
+  (evil-leader/set-key "d c" 'elscreen-create)
+  (evil-leader/set-key "d n" 'elscreen-next)
+  (evil-leader/set-key "d p" 'elscreen-previous)
+  (evil-leader/set-key "d k" 'elscreen-kill)
+
+  ;; Open term in elscreen
+  (evil-leader/set-key "'" (lambda ()
+                             (interactive)
+                             (elscreen-create)
+                             (term "/bin/zsh")
+                             ))
+
+
   ;; Golden ratio mode
   (golden-ratio-mode 1)
 
