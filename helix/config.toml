@@ -1,0 +1,26 @@
+theme = "tokyomod"
+
+[editor]
+true-color = true
+color-modes = true
+idle-timeout = 75
+
+[editor.indent-guides]
+render = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[keys.normal]
+g = { a = "code_action" }
+0 = "goto_line_start"
+"$" = "goto_line_end"
+
+[keys.select]
+0 = "goto_line_start"
+"$" = "goto_line_end"
+
+[keys.insert]
+j = { k = "normal_mode" }
